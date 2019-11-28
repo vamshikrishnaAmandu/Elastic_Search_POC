@@ -1,0 +1,83 @@
+Elastic Search Installation in Local(Windows)
+
+1.Download zip from the provided link https://www.elastic.co/start
+2.Extract the zip 
+3.Go to ElasticSearch/config/elasticsearch.yml
+4.uncomment cluster name and change the value
+5.Goto ElasticSearch/bin folder run elasticsearch.bat
+
+SpringBoot + ElasticSearch 
+--------------------------
+
+1.Create a spring boot application and configure below dependencies in pom.xml file
+
+<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		
+2.create an extended interface for ElasticsearchRepository.
+
+3.After implementation of all layers test it once.If everything works fine then push this code in to GCP. 
+
+
+====================================================
+
+Deploy SpringBoot+Elastic Search Application GCP
+
+
+1.Create a GCP Account from provided link https://cloud.google.com/
+2.After Successful registration open console go to home page and navigate to Compute Engine
+3.Click on VMInstance then create VM (Ubuntu 18)
+4.Once VMInstance  created successfully Download java and elastic search.
+
+
+Download java in GCP (ComputeEngine Ubuntu)
+-------------------------------------------
+
+sudo apt update
+sudo apt  -y install openjdk-8-jdk
+
+
+Download ElasticSearch in GCP (ComputeEngine)
+---------------------------------------------
+
+please follow below link for installation process of ElasticSearch.
+
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#install-deb
+
+
+Deployment Steps
+-----------------
+
+1.Create Private Key using  Puttygen and copy the public key.
+
+2.Click on  created instance and click edit option paste the public key in ssh label.
+
+3.Connect to winscp and transfer the jar file to GCP.
+
+4.Connect to putty and switch to jar location folder and execute the jar
+
+5.Copy public ip address of GCP and paste it in local postman then access our API's.
+
+
+
+
+		
